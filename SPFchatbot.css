@@ -5,7 +5,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f5ea; /* very soft greenish-beige */
+  background: #f9f9d1; /* soft pale yellow */
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -21,11 +21,11 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #f9fbe7 0%, #e6f0a7 100%); /* soft green to light yellow gradient */
+  background: linear-gradient(135deg, #fff9b1 0%, #e2ea87 100%); /* soft yellows gradient */
   border-radius: 0;
-  box-shadow: 0 4px 20px rgba(130, 140, 100, 0.3);
+  box-shadow: 0 4px 20px rgba(138, 153, 65, 0.3); /* greenish shadow */
   overflow: hidden;
-  border: 1px solid #cbd6a9;
+  border: 1px solid #d3dc8a; /* pale green border */
 }
 
 /* Scrollable chat log */
@@ -33,7 +33,7 @@ body {
   flex: 1;
   padding: 1rem 1.5rem;
   overflow-y: auto;
-  border-bottom: 1px solid #cbd6a9;
+  border-bottom: 1px solid #d3dc8a;
   display: flex;
   flex-direction: column;
 }
@@ -52,19 +52,19 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Bot message bubble - soft muted green */
+/* Bot message bubble - soft light green */
 .bot {
-  background: #d9e8c8;
-  color: #4b533a;
+  background: #d9eac8; /* very light green */
+  color: #4a5632; /* darker olive green text */
   align-self: flex-start;
   text-align: left;
   border-top-left-radius: 4px;
 }
 
-/* User message bubble - warm yellow */
+/* User message bubble - soft warm yellow */
 .user {
-  background: #f8f4c9;
-  color: #6b6000;
+  background: #fff8a5; /* pastel yellow */
+  color: #746d00; /* dark mustard */
   align-self: flex-end;
   text-align: right;
   border-top-right-radius: 4px;
@@ -74,12 +74,12 @@ body {
 /* Options container */
 #options {
   padding: 1rem 1.5rem;
-  background: #e6f0a7;
+  background: #e2ea87; /* pale yellow-green */
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
   justify-content: center;
-  border-top: 1px solid #cbd6a9;
+  border-top: 1px solid #d3dc8a;
 }
 
 /* Buttons */
@@ -87,8 +87,8 @@ body {
   flex: 1 1 45%;
   padding: 0.85rem;
   border: none;
-  background: #a2b45e;
-  color: #f0f3d8;
+  background: #8aa041; /* soft green */
+  color: #fff8a5; /* soft yellow text */
   border-radius: 12px;
   cursor: pointer;
   font-size: 1rem;
@@ -99,7 +99,7 @@ body {
 
 .option-btn:hover,
 .option-btn:focus {
-  background: #7b8d3e;
+  background: #6d7a2f; /* darker green on hover */
   outline: none;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
 }
