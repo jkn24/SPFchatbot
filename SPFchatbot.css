@@ -10,13 +10,14 @@ html, body {
   width: 100%;   /* Full width for the entire screen */
 }
 
+/* Body should stretch to fill the entire screen */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fffef5;
+  background: #f5f5f5;  /* Subtle light grey background */
   display: flex;
   justify-content: center;
   align-items: stretch;
-  color: #1a1a1a;
+  color: #333333;  /* Darker, easy-on-the-eyes text color */
   height: 100%;  /* Full height */
   width: 100%;   /* Full width */
 }
@@ -27,11 +28,11 @@ body {
   flex-direction: column;
   width: 100vw;   /* Full screen width */
   height: 100vh;  /* Full screen height */
-  background: linear-gradient(135deg, #f3f9f4 0%, #fffde1 100%);
-  border-radius: 0;
-  box-shadow: 0 4px 20px rgba(60, 60, 60, 0.15);
+  background: #fafafa;  /* Soft off-white background */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(60, 60, 60, 0.1);
   overflow: hidden;
-  border: 1px solid #aabfaa;
+  border: 1px solid #ddd; /* Subtle grey border */
 }
 
 /* Scrollable chat log */
@@ -39,11 +40,10 @@ body {
   flex: 1;
   padding: 1.2rem 1.5rem;
   overflow-y: auto;
-  border-bottom: 1px solid #cddccc;
+  border-bottom: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  height: calc(100vh - 150px); /* Chat log takes most of the height */
 }
 
 /* Message bubbles */
@@ -57,42 +57,43 @@ body {
   clear: both;
   font-size: 1.05rem;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Bot message bubble - high contrast green */
+/* Bot message bubble - muted green */
 .bot {
-  background: #114b1a;          /* deep green */
-  color: #f0fff4;               /* near-white mint */
+  background: #c8e6c9;          /* Soft, muted green */
+  color: #1b5e20;               /* Deep green for text */
   align-self: flex-start;
   text-align: left;
   border-top-left-radius: 4px;
 }
 
-/* User message bubble - high contrast yellow */
+/* User message bubble - muted yellow */
 .user {
-  background: #ffce00;          /* strong yellow */
-  color: #2a1f00;               /* deep brown/black */
+  background: #fff9c4;          /* Light pastel yellow */
+  color: #4e2a00;               /* Dark brown text for contrast */
   align-self: flex-end;
   text-align: right;
   border-top-right-radius: 4px;
   font-weight: 700;
-  box-shadow: 0 3px 12px rgba(255, 206, 0, 0.4);
+  box-shadow: 0 3px 8px rgba(255, 241, 118, 0.2);
 }
 
-/* Options container */
+/* Options container (buttons) */
 #options {
   padding: 1rem 1.5rem;
-  background: #fdf9cc;
+  background: #f2f2f2;           /* Soft grey background for buttons */
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   justify-content: center;
-  border-top: 1px solid #cddccc;
-  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  background-color: #f9f9f9;
   position: absolute;
   bottom: 0;
   width: 100%;
+  z-index: 1;
 }
 
 /* Buttons */
@@ -100,27 +101,27 @@ body {
   flex: 1 1 45%;
   padding: 1rem;
   border: none;
-  background: #1b5e20;          /* dark accessible green */
+  background: #8bc34a;           /* Softer green */
   color: #ffffff;
   border-radius: 14px;
   cursor: pointer;
   font-size: 1.05rem;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
+  box-shadow: 0 4px 12px rgba(112, 150, 70, 0.3);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Focus state */
 .option-btn:focus {
-  outline: 3px solid #ffce00;
+  outline: 3px solid #ffeb3b;   /* Softer yellow focus outline */
   outline-offset: 2px;
 }
 
 /* Hover and focus interaction */
 .option-btn:hover,
 .option-btn:focus {
-  background: #145a1a;
-  box-shadow: 0 6px 16px rgba(20, 90, 26, 0.4);
+  background: #7b9e41;           /* Slightly deeper green on hover */
+  box-shadow: 0 6px 16px rgba(123, 158, 65, 0.4);
 }
 
 /* Responsive layout adjustments */
