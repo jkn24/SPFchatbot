@@ -35,16 +35,17 @@ body {
   border: 1px solid #ddd; /* Subtle grey border */
 }
 
-/* Scrollable chat log */
+/* Scrollable chat log with max height */
 #chat-log {
-  flex: 1; /* Take up all available space */
+  flex: 1;
   padding: 1.2rem 1.5rem;
   overflow-y: auto; /* Allow vertical scroll */
   border-bottom: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  scroll-behavior: smooth;  /* Smooth scrolling */
+  max-height: calc(100vh - 200px); /* Allow scrolling within this height (keeping space for buttons) */
+  scroll-behavior: smooth;
 }
 
 /* Message bubbles */
