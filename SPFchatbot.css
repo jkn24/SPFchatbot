@@ -1,18 +1,17 @@
-/* Basic layout */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f9f9f9;
   margin: 0;
-  padding: 2rem;
+  padding: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-/* Chat container box */
 #chat-container {
   width: 100%;
   max-width: 400px;
-  max-height: 90vh;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -21,7 +20,6 @@ body {
   overflow: hidden;
 }
 
-/* Scrollable chat area */
 #chat-log {
   flex: 1;
   padding: 1rem;
@@ -30,7 +28,6 @@ body {
   min-height: 200px;
 }
 
-/* General message bubble style */
 .message {
   margin-bottom: 1rem;
   line-height: 1.4;
@@ -41,7 +38,6 @@ body {
   clear: both;
 }
 
-/* Bot bubble (left side) */
 .bot {
   background: #e1e1e1;
   color: #333;
@@ -49,15 +45,6 @@ body {
   text-align: left;
 }
 
-/* User bubble (right side) */
-.user {
-  background: #0078d7;
-  color: white;
-  float: right;
-  text-align: right;
-}
-
-/* Button layout */
 #options {
   padding: 1rem;
   background: #fafafa;
@@ -85,7 +72,6 @@ body {
   outline: none;
 }
 
-/* For mobile responsiveness */
 @media (max-width: 400px) {
   .option-btn {
     flex: 1 1 100%;
