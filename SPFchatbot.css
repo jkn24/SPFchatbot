@@ -1,1 +1,121 @@
+/* Reset + base layout */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffe6f0; /* soft pale pink background */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* Chat container fills screen width and height */
+#chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffdaeb 0%, #ffb6cc 100%); /* pink gradient */
+  border-radius: 0;
+  box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3); /* pink shadow */
+  overflow: hidden;
+  border: 1px solid #ff99cc; /* pink border */
+}
+
+/* Scrollable chat log */
+#chat-log {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  overflow-y: auto;
+  border-bottom: 1px solid #ff99cc;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message bubbles */
+.message {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  word-wrap: break-word;
+  max-width: 75%;
+  clear: both;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Bot message bubble - light pink */
+.bot {
+  background: #ffd6e8; /* light pink */
+  color: #8b004b; /* dark pink text */
+  align-self: flex-start;
+  text-align: left;
+  border-top-left-radius: 4px;
+}
+
+/* User message bubble - pastel pink */
+.user {
+  background: #ffe0f0; /* pastel pink */
+  color: #a30052; /* deeper pink */
+  align-self: flex-end;
+  text-align: right;
+  border-top-right-radius: 4px;
+  font-weight: 600;
+}
+
+/* Options container */
+#options {
+  padding: 1rem 1.5rem;
+  background: #ffb6cc; /* bright pink */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  border-top: 1px solid #ff99cc;
+}
+
+/* Buttons */
+.option-btn {
+  flex: 1 1 45%;
+  padding: 0.85rem;
+  border: none;
+  background: #ff66aa; /* pink */
+  color: #fff0f7; /* very light pink text */
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(255, 20, 147, 0.25);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.option-btn:hover,
+.option-btn:focus {
+  background: #cc3d7a; /* darker pink on hover */
+  outline: none;
+  box-shadow: 0 5px 12px rgba(204, 61, 122, 0.4);
+}
+
+/* Responsive buttons stack on smaller screens */
+@media (max-width: 600px) {
+  .option-btn {
+    flex: 1 1 100%;
+  }
+
+  #chat-log {
+    padding: 1rem;
+  }
+
+  #options {
+    padding: 1rem;
+  }
+}
 
