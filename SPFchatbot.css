@@ -178,22 +178,19 @@ body {
   text-decoration: underline;
 }
 
-/* Learn More Button */
 .learn-more-btn {
-  display: inline-block;
   padding: 10px 20px;
-  margin-left: 20px;
   margin-top: 20px;
-  text-align: center;
   background-color: #8bc34a; /* Green background */
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  max-width: 250px; /* Set a max width */
-  width: 100%; /* Make the button take full width */
-  box-sizing: border-box; /* Include padding/borders in width */
-  align-self: center; /* Center the button in its parent container */
+  max-width: 250px;
+  display: block; /* Ensures it's a block-level element */
+  margin-left: auto; /* Automatically push left margin */
+  margin-right: auto; /* Automatically push right margin */
 }
+
 
 /* Fixing the Learn More button on hover */
 .learn-more-btn:hover {
