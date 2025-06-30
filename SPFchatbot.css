@@ -149,7 +149,7 @@ body {
 
 /* Person card style (name + email) */
 .person-card {
-  background: #ffffff;
+  background: #f0f4c3; /* Light complementary yellow-green */
   border-radius: 12px; /* Rounded corners for each card */
   padding: 1rem;
   display: flex;
@@ -157,7 +157,7 @@ body {
   gap: 0.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-  border: 1px solid #ddd; /* Border around each card */
+  border: 1px solid #8bc34a; /* Green border for the cards */
 }
 
 .person-card:hover {
@@ -196,4 +196,16 @@ body {
 
 .learn-more-btn:hover {
   background-color: #7b9e41; /* Darker green on hover */
+}
+
+/* Styling for the header with the separating line */
+h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+hr {
+  border-top: 2px solid #1b5e20; /* Dark green line */
+  margin-top: 0;
 }
