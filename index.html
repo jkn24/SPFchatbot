@@ -7,7 +7,7 @@
   <title>Chatbot Interface</title>
 
   <!-- Link to external stylesheet -->
-  <link rel="stylesheet"  href="SPFchatbot.css"/>
+  <link rel="stylesheet" href="SPFchatbot.css" />
 </head>
 <body>
   <main id="chat-container" role="region" aria-label="Chatbot interface">
@@ -23,40 +23,7 @@
     </nav>
   </main>
 
-  <!-- Interaction script -->
-
+  <!-- Link to external JavaScript -->
   <script src="app.js"></script>
-  <script>
-    const responses = {
-      "What is SPF?": "The Cal Poly Humboldt Sponsored Programs Foundation (SPF) is a nonprofit auxiliary organization that manages externally funded grants and contracts for the university. Established to support research and creative activities, SPF works closely with faculty, staff, and students to submit proposals, administer awards, and ensure compliance with funding agency requirements. Its mission is to advance the university’s academic goals by supporting sponsored research and scholarly activities.",
-      "Looking for funding": "Here are some funding search resources from Cal Poly Humboldt's Sponsored Program Foundation website.",
-      "Looking for pivot training": "Here is the contact information for individuals who can assist you with being trained on Pivot:",
-      "Question about available funding": "Here is the contact information for individuals who can assist you with your funding questions:",
-      "Other—please refer me to a person.": "Here is the contact information for individuals working in the Office of Research Development with Cal Poly Humboldt's Sponsored Program Foundation."
-    };
-
-    const chatLog = document.getElementById('chat-log');
-    const buttons = document.querySelectorAll('.option-btn');
-
-    function addMessage(text, sender) {
-      const msg = document.createElement('div');
-      msg.className = 'message ' + sender;
-      msg.textContent = text;
-      chatLog.appendChild(msg);
-      chatLog.scrollTop = chatLog.scrollHeight;
-    }
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const userText = button.textContent;
-        addMessage(userText, 'user');
-
-        const botResponse = responses[userText] || "I'm not sure how to respond to that.";
-        setTimeout(() => {
-          addMessage(botResponse, 'bot');
-        }, 400); // small delay to simulate response
-      });
-    });
-  </script>
 </body>
 </html>
