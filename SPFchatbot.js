@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
       <p>The Research and Development (RD) office at Cal Poly Humboldt is dedicated to supporting faculty, staff, and students in securing research funding and advancing innovative projects. By offering resources like curated funding opportunities, training on platforms such as Pivot, and personalized support for grant proposals, the office helps turn research ideas into reality. It also fosters collaboration across departments and organizes workshops, networking events, and internal funding competitions. Through its comprehensive services and outreach efforts, the RD office plays a key role in driving the university's research initiatives and connecting the campus community with valuable funding resources.</p>
       <a href="https://www.humboldt.edu/research/award-lifecycle/funding-proposal-support" target="_blank" class="learn-more-btn">Learn More</a>
 
+      <hr />
+
       <h3>Meet Our Team</h3>
       <div class="person-card">
         <h3>Erika Wright, Research Development Lead</h3>
@@ -82,12 +84,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
       } else if (userText === "Other—please refer me to a person.") {
         setTimeout(() => {
-          // Display message for the "Other" option
-          addMessage("Here are some individuals that will be able to assist you further:", false);
+          // Only display the people cards without any additional text or image
+          addMessage(`
+            <div class="person-card">
+              <h3>Erika Wright, Research Development Lead</h3>
+              <p>✉ <a href="mailto:erika.wright@humboldt.edu">erika.wright@humboldt.edu</a></p>
+            </div>
 
-          setTimeout(() => {
-            addMessage(structuredResponse, false);  // List of people from the "Looking for pivot training"
-          }, 500);  // Small delay before showing the people cards
+            <div class="person-card">
+              <h3>Cara Peters, Research Development Marketing and Support Coordinator</h3>
+              <p>✉ <a href="mailto:cara.peters@humboldt.edu">cara.peters@humboldt.edu</a></p>
+            </div>
+
+            <div class="person-card">
+              <h3>Kumiye "Kumi" Nakadate, Research Development Support Coordinator</h3>
+              <p>✉ <a href="mailto:kumiye.nakadate@humboldt.edu">kumiye.nakadate@humboldt.edu</a></p>
+            </div>
+          `, false);  // Display only the people cards
         }, 400);
       } else {
         setTimeout(() => {
