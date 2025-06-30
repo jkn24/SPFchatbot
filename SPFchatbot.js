@@ -28,17 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <h3>Meet Our Team</h3>
       <div class="person-card">
-        <h4>✍ Erika Wright, Research Development Lead</h4>
+        <h3> Erika Wright, Research Development Lead</h3>
         <p>✉ <a href="mailto:erika.wright@humboldt.edu">erika.wright@humboldt.edu</a></p>
       </div>
 
       <div class="person-card">
-        <h4>✍ Cara Peters, Research Development Marketing and Support Coordinator</h4>
+        <h3> Cara Peters, Research Development Marketing and Support Coordinator</h3>
         <p>✉ <a href="mailto:cara.peters@humboldt.edu">cara.peters@humboldt.edu</a></p>
       </div>
 
       <div class="person-card">
-        <h4>✍ Kumiye "Kumi" Nakadate, Research Development Support Coordinator</h4>
+        <h3> Kumiye "Kumi" Nakadate, Research Development Support Coordinator</h3>
         <p>✉ <a href="mailto:kumiye.nakadate@humboldt.edu">kumiye.nakadate@humboldt.edu</a></p>
       </div>
     </div>
