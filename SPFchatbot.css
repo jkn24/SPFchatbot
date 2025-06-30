@@ -189,6 +189,7 @@ body {
   display: block; /* Ensures it's a block-level element */
   margin-left: auto; /* Automatically push left margin */
   margin-right: auto; /* Automatically push right margin */
+  text-align: center;
 }
 
 
