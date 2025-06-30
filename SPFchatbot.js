@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
       <p>The Research and Development (RD) office at Cal Poly Humboldt is dedicated to supporting faculty, staff, and students in securing research funding and advancing innovative projects. By offering resources like curated funding opportunities, training on platforms such as Pivot, and personalized support for grant proposals, the office helps turn research ideas into reality. It also fosters collaboration across departments and organizes workshops, networking events, and internal funding competitions. Through its comprehensive services and outreach efforts, the RD office plays a key role in driving the university's research initiatives and connecting the campus community with valuable funding resources.</p>
       <a href="https://www.humboldt.edu/research/award-lifecycle/funding-proposal-support" target="_blank" class="learn-more-btn">Learn More</a>
 
+      <hr />
+
       <h3>Meet Our Team</h3>
       <div class="person-card">
         <h3>Erika Wright, Research Development Lead</h3>
@@ -53,7 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (userText === "Looking for pivot training") {
         setTimeout(() => {
-          addMessage(structuredResponse, false);  // Add the structured message with info and team
+          // First message before structured response
+          addMessage("Here are some offices and individuals that will be able to help you with training with Pivot.", false);
+          
+          // Structured response with info and team
+          setTimeout(() => {
+            addMessage(structuredResponse, false);
+          }, 1000);  // Add small delay to simulate the bot thinking
         }, 400);  // small delay to simulate response
       } else {
         setTimeout(() => {
