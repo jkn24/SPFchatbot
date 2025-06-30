@@ -32,7 +32,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(60, 60, 60, 0.1);
   overflow: hidden;
-  border: 1px solid #ddd; /* Subtle grey border */
+  border: 1px solid #333; /* Matching border color to text */
 }
 
 /* Scrollable chat log with max height */
@@ -40,7 +40,7 @@ body {
   flex: 1;
   padding: 1.2rem 1.5rem;
   overflow-y: auto;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #333;  /* Line color matches the text color */
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -99,7 +99,7 @@ body {
   flex-wrap: wrap;
   gap: 0.75rem;
   justify-content: center;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #333; /* Matching line color */
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -111,7 +111,7 @@ body {
   flex: 1 1 45%;
   padding: 1rem;
   border: none;
-  background: #8bc34a;
+  background: #8bc34a; /* Complementary green */
   color: white;
   border-radius: 14px;
   cursor: pointer;
@@ -121,13 +121,68 @@ body {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover and focus states */
+/* Hover and focus states for buttons */
 .option-btn:hover,
 .option-btn:focus {
-  background: #7b9e41;
+  background: #7b9e41; /* Slightly darker green on hover */
   box-shadow: 0 6px 16px rgba(123, 158, 65, 0.4);
 }
 
-/* Focus outline */
+/* Focus outline for buttons */
 .option-btn:focus {
-  outline: 
+  outline: 3px solid #8bc34a; /* Green focus outline */
+}
+
+/* Meet Our Team Section */
+#meet-our-team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background: #fafafa;
+  gap: 1.5rem;
+}
+
+/* Individual team member card */
+.team-member-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.team-member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.team-member-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.team-member-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.team-member-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Example Card for Team Member */
+.team-member-card .name {
+  font-weight: 700;
+  color: #333;
+}
+
+.team-member-card .role {
+  font-weight: 600;
+  color: #8bc34a; /* Use complementary green for role title */
+}
