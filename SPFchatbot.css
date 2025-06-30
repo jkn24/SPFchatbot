@@ -156,8 +156,8 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
   border: 1px solid #ddd; /* Border around each card */
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .person-card:hover {
@@ -182,8 +182,8 @@ body {
 
 .learn-more-btn {
   padding: 10px 20px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   background-color: #8bc34a; /* Green background */
   color: white;
   text-decoration: none;
