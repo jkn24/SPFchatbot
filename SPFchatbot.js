@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Structured data with HTML formatting
   const structuredResponse = `
     <div class="bot-message">
-      <img src="https://www.humboldt.edu/research/about/our-staff" alt="Research Staff Banner" style="width: 100%; height: auto; margin-bottom: 20px;" />
+      // <img src="https://www.humboldt.edu/research/about/our-staff" alt="Research Staff Banner" style="width: 100%; height: auto; margin-bottom: 20px;" />
 
       <h2>SPF Office of Research Development</h2>
       <hr style="border-top: 2px solid #ccc; margin-bottom: 20px;" />
