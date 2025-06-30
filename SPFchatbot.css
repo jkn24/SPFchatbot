@@ -182,20 +182,25 @@ body {
 .learn-more-btn {
   display: inline-block;
   padding: 10px 20px;
-  width: 60%; /* Set button width to 60% */
   margin-top: 20px;
   text-align: center;
   background-color: #8bc34a; /* Green background */
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  align-self: center; /* Center within the message bubble */
+  max-width: 250px; /* Set a max width */
+  width: 100%; /* Make the button take full width */
+  box-sizing: border-box; /* Include padding/borders in width */
+  align-self: center; /* Center the button in its parent container */
+  margin-left: auto; /* Ensure the left margin is auto */
+  margin-right: auto; /* Ensure the right margin is auto */
 }
 
-/* Learn More button hover */
+/* Fixing the Learn More button on hover */
 .learn-more-btn:hover {
   background-color: #7b9e41; /* Darker green on hover */
 }
+
 
 /* HR styling */
 hr {
