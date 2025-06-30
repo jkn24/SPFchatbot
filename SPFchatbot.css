@@ -4,10 +4,10 @@
 }
 
 html, body {
-  height: 100%;  /* Ensure full height for parent elements */
+  height: 100%;
   margin: 0;
   padding: 0;
-  width: 100%;   /* Full width for the entire screen */
+  width: 100%;
 }
 
 /* Body should stretch to fill the entire screen */
@@ -18,16 +18,16 @@ body {
   justify-content: center;
   align-items: stretch;
   color: #333333;  /* Darker, easy-on-the-eyes text color */
-  height: 100%;  /* Full height */
-  width: 100%;   /* Full width */
+  height: 100%;
+  width: 100%;
 }
 
 /* Chat container fills the entire screen */
 #chat-container {
   display: flex;
   flex-direction: column;
-  width: 100vw;   /* Full screen width */
-  height: 100vh;  /* Full screen height */
+  width: 100vw;
+  height: 100vh;
   background: #fafafa;  /* Soft off-white background */
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(60, 60, 60, 0.1);
@@ -39,12 +39,12 @@ body {
 #chat-log {
   flex: 1;
   padding: 1.2rem 1.5rem;
-  overflow-y: auto; /* Allow vertical scroll */
+  overflow-y: auto;
   border-bottom: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  max-height: calc(100vh - 200px); /* Allow scrolling within this height (keeping space for buttons) */
+  max-height: calc(100vh - 200px);
   scroll-behavior: smooth;
 }
 
@@ -60,21 +60,26 @@ body {
   font-size: 1.05rem;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Bot message bubble - muted green */
+/* Bot message bubble */
 .bot {
-  background: #c8e6c9;          /* Soft, muted green */
-  color: #1b5e20;               /* Deep green for text */
+  background: #c8e6c9; /* Soft muted green */
+  color: #1b5e20; /* Deep green text */
   align-self: flex-start;
   text-align: left;
   border-top-left-radius: 4px;
 }
 
-/* User message bubble - muted yellow */
+.bot:hover {
+  background: #a5d6a7; /* Slightly darker green on hover */
+}
+
+/* User message bubble */
 .user {
-  background: #fff9c4;          /* Light pastel yellow */
-  color: #4e2a00;               /* Dark brown text for contrast */
+  background: #fff9c4; /* Soft yellow */
+  color: #4e2a00; /* Dark brown text */
   align-self: flex-end;
   text-align: right;
   border-top-right-radius: 4px;
@@ -82,29 +87,32 @@ body {
   box-shadow: 0 3px 8px rgba(255, 241, 118, 0.2);
 }
 
+.user:hover {
+  background: #fbc02d; /* Darker yellow on hover */
+}
+
 /* Options container (buttons) */
 #options {
   padding: 1rem 1.5rem;
-  background: #f2f2f2;           /* Soft grey background for buttons */
+  background: #f2f2f2;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   justify-content: center;
   border-top: 1px solid #ddd;
-  background-color: #f9f9f9;
   position: absolute;
   bottom: 0;
   width: 100%;
   z-index: 1;
 }
 
-/* Buttons */
+/* Option buttons */
 .option-btn {
   flex: 1 1 45%;
   padding: 1rem;
   border: none;
-  background: #8bc34a;           /* Softer green */
-  color: #ffffff;
+  background: #8bc34a;
+  color: white;
   border-radius: 14px;
   cursor: pointer;
   font-size: 1.05rem;
@@ -113,35 +121,13 @@ body {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Focus state */
-.option-btn:focus {
-  outline: 3px solid #ffeb3b;   /* Softer yellow focus outline */
-  outline-offset: 2px;
-}
-
-/* Hover and focus interaction */
+/* Hover and focus states */
 .option-btn:hover,
 .option-btn:focus {
-  background: #7b9e41;           /* Slightly deeper green on hover */
+  background: #7b9e41;
   box-shadow: 0 6px 16px rgba(123, 158, 65, 0.4);
 }
 
-/* Responsive layout adjustments */
-@media (max-width: 600px) {
-  /* Ensure the chat container still takes full height */
-  #chat-container {
-    height: 100vh;
-    width: 100vw;
-    border-radius: 0;  /* Optional: remove rounded corners on mobile */
-  }
-
-  /* Make options button fill width on mobile */
-  .option-btn {
-    flex: 1 1 100%;
-  }
-
-  /* Adjust chat log padding */
-  #chat-log {
-    padding: 1rem;
-  }
-}
+/* Focus outline */
+.option-btn:focus {
+  outline: 
