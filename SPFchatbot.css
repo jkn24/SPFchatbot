@@ -182,7 +182,7 @@ body {
 .learn-more-btn {
   display: inline-block;
   padding: 10px 20px;
-  padding-left: 20px;
+  margin-left: 20px;
   margin-top: 20px;
   text-align: center;
   background-color: #8bc34a; /* Green background */
@@ -193,8 +193,6 @@ body {
   width: 100%; /* Make the button take full width */
   box-sizing: border-box; /* Include padding/borders in width */
   align-self: center; /* Center the button in its parent container */
-  margin-left: auto; /* Ensure the left margin is auto */
-  margin-right: auto; /* Ensure the right margin is auto */
 }
 
 /* Fixing the Learn More button on hover */
