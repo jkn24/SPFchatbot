@@ -84,23 +84,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
       } else if (userText === "Other—please refer me to a person.") {
         setTimeout(() => {
-          // Only display the people cards without any additional text or image
-          addMessage(`
-            <div class="person-card">
-              <h3>Erika Wright, Research Development Lead</h3>
-              <p>✉ <a href="mailto:erika.wright@humboldt.edu">erika.wright@humboldt.edu</a></p>
-            </div>
+          // Display the intro message first
+          addMessage("Here are some individuals who can further assist you:", false);
 
-            <div class="person-card">
-              <h3>Cara Peters, Research Development Marketing and Support Coordinator</h3>
-              <p>✉ <a href="mailto:cara.peters@humboldt.edu">cara.peters@humboldt.edu</a></p>
-            </div>
+          // Then display only the people cards without any additional text or image
+          setTimeout(() => {
+            addMessage(`
+              <div class="person-card">
+                <h3>Erika Wright, Research Development Lead</h3>
+                <p>✉ <a href="mailto:erika.wright@humboldt.edu">erika.wright@humboldt.edu</a></p>
+              </div>
 
-            <div class="person-card">
-              <h3>Kumiye "Kumi" Nakadate, Research Development Support Coordinator</h3>
-              <p>✉ <a href="mailto:kumiye.nakadate@humboldt.edu">kumiye.nakadate@humboldt.edu</a></p>
-            </div>
-          `, false);  // Display only the people cards
+              <div class="person-card">
+                <h3>Cara Peters, Research Development Marketing and Support Coordinator</h3>
+                <p>✉ <a href="mailto:cara.peters@humboldt.edu">cara.peters@humboldt.edu</a></p>
+              </div>
+
+              <div class="person-card">
+                <h3>Kumiye "Kumi" Nakadate, Research Development Support Coordinator</h3>
+                <p>✉ <a href="mailto:kumiye.nakadate@humboldt.edu">kumiye.nakadate@humboldt.edu</a></p>
+              </div>
+            `, false);  // Display only the people cards
+          }, 400);
         }, 400);
       } else {
         setTimeout(() => {
