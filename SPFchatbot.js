@@ -57,12 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           // First message before structured response
           addMessage("Here are some offices and individuals that will be able to help you with training with Pivot.", false);
-          
-          // Structured response with info and team
+
+          // Wait for a short time, then show structured response
           setTimeout(() => {
             addMessage(structuredResponse, false);
-          }, 1000);  // Add small delay to simulate the bot thinking
-        }, 400);  // small delay to simulate response
+          }, 500);  // Short delay before showing the structured response
+        }, 400);  // Small delay after button click before first message
       } else {
         setTimeout(() => {
           addMessage("I'm not sure how to respond to that.", false);
