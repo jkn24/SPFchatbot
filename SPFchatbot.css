@@ -112,7 +112,7 @@ body {
 }
 
 /* Option buttons */
-.option-btn {
+.option-btn, .learn-more-btn {
   flex: 1 1 45%;
   padding: 1rem;
   border: none;
