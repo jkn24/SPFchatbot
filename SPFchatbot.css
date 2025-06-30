@@ -180,7 +180,8 @@ body {
 
 .learn-more-btn {
   padding: 10px 20px;
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   background-color: #8bc34a; /* Green background */
   color: white;
   text-decoration: none;
