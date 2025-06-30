@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const structuredResponse = `
     <div class="bot-message">
       <h2>SPF Office of Research Development</h2>
-      <hr color="dark green"; />  <!-- Using the default HR styling -->
+      <hr color="dark green" />  <!-- Using the default HR styling -->
       
       <img src="https://assets.isu.pub/document-structure/241104125135-a0dd721d1124a555952246b0575997fe/v1/9c58632e3439ab68a04f6311889b5765.jpeg" alt="Research Staff Banner" style="width: 100%; height: auto; margin-bottom: 20px;" />
       
