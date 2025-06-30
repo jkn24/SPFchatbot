@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollToBottom();
   }
 
-  // Structured data with HTML formatting
+  // Structured data with HTML formatting for "Looking for funding" and "Question about available funding"
   const structuredResponse = `
     <div class="bot-message">
       <h2>SPF Office of Research Development</h2>
@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
       
       <p>The Research and Development (RD) office at Cal Poly Humboldt is dedicated to supporting faculty, staff, and students in securing research funding and advancing innovative projects. By offering resources like curated funding opportunities, training on platforms such as Pivot, and personalized support for grant proposals, the office helps turn research ideas into reality. It also fosters collaboration across departments and organizes workshops, networking events, and internal funding competitions. Through its comprehensive services and outreach efforts, the RD office plays a key role in driving the university's research initiatives and connecting the campus community with valuable funding resources.</p>
       <a href="https://www.humboldt.edu/research/award-lifecycle/funding-proposal-support" target="_blank" class="learn-more-btn">Learn More</a>
+
+      <hr />
 
       <h3>Meet Our Team</h3>
       <div class="person-card">
@@ -45,22 +47,50 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   `;
 
+  // The "What is SPF?" message
+  const spfInfoMessage = `
+    <div class="bot-message">
+      <h2>What is SPF?</h2>
+      <p>The Sponsored Programs Foundation (SPF) at Cal Poly Humboldt is dedicated to supporting the university's research, grant, and contract initiatives. SPF helps faculty, staff, and students navigate the complexities of securing funding for innovative projects by providing resources, expertise, and personalized assistance. With a focus on fostering collaboration and advancing research, SPF plays a pivotal role in turning ideas into impactful solutions for the campus community and beyond.</p>
+    </div>
+  `;
+
   // Handle option button clicks
   document.querySelectorAll('.option-btn').forEach(button => {
     button.addEventListener('click', () => {
       const userText = button.textContent.trim();  // Ensure we match the key correctly
       addMessage(userText, true);  // Add user message
 
-      if (userText === "Looking for pivot training") {
+      if (userText === "What is SPF?") {
         setTimeout(() => {
-          // First message before structured response
-          addMessage("Here are some offices and individuals that will be able to help you with training with Pivot.", false);
+          addMessage(spfInfoMessage, false);  // Show SPF info
+        }, 400);  // Delay before showing SPF info
 
-          // Wait for a short time, then show structured response
+      } else if (userText === "Looking for pivot training" || userText === "Looking for funding" || userText === "Question about available funding") {
+        // Show different intro for each of the funding-related options, and then show the structured response
+        const introMessage = (userText === "Looking for funding") 
+          ? "Here are some offices and individuals that will be able to help you with discussing and finding funding opportunities:"
+          : (userText === "Question about available funding")
+            ? "Here are some offices and individuals that will be able to help you with all your questions regarding funding:"
+            : "Here are some offices and individuals that will be able to help you with training with Pivot.";
+        
+        setTimeout(() => {
+          addMessage(introMessage, false);  // Display the respective intro message
+
           setTimeout(() => {
-            addMessage(structuredResponse, false);
-          }, 500);  // Short delay before showing the structured response
-        }, 400);  // Small delay after button click before first message
+            addMessage(structuredResponse, false);  // Display structured message after a delay
+          }, 500);  // Small delay before showing the structured response
+        }, 400);  // Delay before showing the intro message
+
+      } else if (userText === "Other—please refer me to a person.") {
+        setTimeout(() => {
+          // Display message for the "Other" option
+          addMessage("Here are some individuals that will be able to assist you further:", false);
+
+          setTimeout(() => {
+            addMessage(structuredResponse, false);  // List of people from the "Looking for pivot training"
+          }, 500);  // Small delay before showing the people cards
+        }, 400);
       } else {
         setTimeout(() => {
           addMessage("I'm not sure how to respond to that.", false);
