@@ -11,34 +11,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = document.createElement('div');
     message.classList.add('message');
     message.classList.add(isUser ? 'user' : 'bot');
-    message.innerHTML = messageContent;  // Make sure the HTML content (links) are injected properly
+    message.innerHTML = messageContent;  // Inject HTML content
     chatLog.appendChild(message);
     scrollToBottom();
   }
 
-  // Responses with links and enhanced descriptions
-  const responses = {
-    "What is SPF?": `The Cal Poly Humboldt Sponsored Programs Foundation (SPF) is a nonprofit auxiliary organization that manages externally funded grants and contracts for the university. Established to support research and creative activities, SPF works closely with faculty, staff, and students to submit proposals, administer awards, and ensure compliance with funding agency requirements. Its mission is to advance the university’s academic goals by supporting sponsored research and scholarly activities. Learn more at <a href="https://www.humboldt.edu/research" target="_blank">humboldt.edu/research</a>.`,
-    
-    "Looking for funding": `Looking for funding doesn't have to be difficult or intimidating. SPF's professionals are here to make it easier! We can conduct searches for possible funding opportunities on your behalf. Please contact someone in our Research Development office: <a href="https://www.humboldt.edu/research/about/our-staff" target="_blank">Erika Wright or Cara Peters</a>.<br><br>Additionally, here are some funding search resources from Cal Poly Humboldt's Sponsored Program Foundation: <a href="https://www.humboldt.edu/research/award-lifecycle/funding-proposal-support/find-funding" target="_blank">Find Funding</a>.`,
-    
-    "Question about available funding": `Here is the contact information for individuals who can assist you with your funding questions: <a href="https://www.humboldt.edu/research/about/our-staff" target="_blank">Erika Wright or Cara Peters</a>.`,
-    
-    "Looking for pivot training": `Here is the contact information for individuals who can assist you with being trained on Pivot: <a href="https://www.humboldt.edu/research/about/our-staff" target="_blank">Erika Wright or Cara Peters</a>.`,
-    
-    "Other—please refer me to a person.": `Here is the contact information for individuals working in the Office of Research Development with Cal Poly Humboldt's Sponsored Program Foundation: <a href="https://www.humboldt.edu/research/about/our-staff" target="_blank">Erika Wright or Cara Peters</a>.`
-  };
+  // Fetching the structured data (with HTML formatting)
+  const structuredResponse = `
+    <div class="bot-message">
+      <img src="https://www.humboldt.edu/research/about/our-staff" alt="Research Staff Banner" style="width: 100%; height: auto; margin-bottom: 20px;"/>
+
+      <h2>SPF Office of Research Development</h2>
+      <hr style="border-top: 2px solid #ccc; margin-bottom: 20px;" />
+      <p>The Research and Development (RD) office at Cal Poly Humboldt is dedicated to supporting faculty, staff, and students in securing research funding and advancing innovative projects. By offering resources like curated funding opportunities, training on platforms such as Pivot, and personalized support for grant proposals, the office helps turn research ideas into reality. It also fosters collaboration across departments and organizes workshops, networking events, and internal funding competitions. Through its comprehensive services and outreach efforts, the RD office plays a key role in driving the university's research initiatives and connecting the campus community with valuable funding resources.</p>
+      <a href="https://www.humboldt.edu/research/award-lifecycle/funding-proposal-support" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #0077b6; color: white; text-decoration: none; border-radius: 5px; margin-bottom: 20px;">Learn More</a>
+
+      <h3>Meet Our Team</h3>
+      <div class="person-card">
+        <h4>✍ Erika Wright, Research Development Lead</h4>
+        <p>✉ <a href="mailto:erika.wright@humboldt.edu">erika.wright@humboldt.edu</a></p>
+      </div>
+
+      <div class="person-card">
+        <h4>✍ Cara Peters, Research Development Marketing and Support Coordinator</h4>
+        <p>✉ <a href="mailto:cara.peters@humboldt.edu">cara.peters@humboldt.edu</a></p>
+      </div>
+
+      <div class="person-card">
+        <h4>✍ Kumiye "Kumi" Nakadate, Research Development Support Coordinator</h4>
+        <p>✉ <a href="mailto:kumiye.nakadate@humboldt.edu">kumiye.nakadate@humboldt.edu</a></p>
+      </div>
+    </div>
+  `;
 
   // Handle option button clicks
   document.querySelectorAll('.option-btn').forEach(button => {
     button.addEventListener('click', () => {
-      const userText = button.textContent.trim();  // Trim any extra spaces around the button text
+      const userText = button.textContent.trim();  // Ensure we match the key correctly
       addMessage(userText, true);  // Add user message
 
-      const botResponse = responses[userText] || "I'm not sure how to respond to that.";
-      setTimeout(() => {
-        addMessage(botResponse, false);  // Add bot response with a small delay
-      }, 400);
+      if (userText === "Looking for pivot training") {
+        setTimeout(() => {
+          addMessage(structuredResponse, false);  // Add the structured message with info and team
+        }, 400);  // small delay to simulate response
+      } else {
+        setTimeout(() => {
+          addMessage("I'm not sure how to respond to that.", false);
+        }, 400);
+      }
     });
   });
 
